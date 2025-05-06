@@ -4,6 +4,7 @@ const cors = require("cors");
 const clienteRoutes = require("./src/routes/clienteRoute");
 const reservaRoutes = require("./src/routes/reservaRoute");
 const path = require("path");
+const reportRoutes = require("./src/routes/reportRoutes");
 
 
 
@@ -14,6 +15,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/api", clienteRoutes);
 app.use("/api", reservaRoutes);
+app.use("/api", reportRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

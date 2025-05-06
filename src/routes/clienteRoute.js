@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const clienteController = require("../controllers/clienteController");
+const upload = require("../config/upload.js");
 const apiKeyMiddleware = require("../config/apiKey");
 
 
