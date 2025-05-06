@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const reservaController = require("../controllers/reservaController");
+const apiKeyMiddleware = require("../config/apiKey");
 
+
+router.use(apiKeyMiddleware);
 router.get("/reservas", reservaController.getAllReservas);
 router.get("/reservas/:id", reservaController.getReservaById);
 router.post("/reservas", reservaController.createReserva);
