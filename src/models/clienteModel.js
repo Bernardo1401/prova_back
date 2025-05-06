@@ -25,7 +25,7 @@ const updateClientes = async (id, data) => {
 };
 
 const createClientes = async (name, idade, foto) => {
-    const result = await pool.query("INSERT INTO clientes (name, idade, fotto) VALUES ($1, $2, $3) RETURNING *", [name, idade, foto]);
+    const result = await pool.query("INSERT INTO clientes (name, idade, foto) VALUES ($1, $2, $3) RETURNING *", [name, idade, foto]);
     return result.rows[0];
 };
 
