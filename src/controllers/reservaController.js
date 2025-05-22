@@ -13,12 +13,17 @@ const getAllReservas = async (req, res) => {
 
 const getReservaById = async (req, res) => {
     try {
-        const reserva = await ReservaModel.getReservaById(req.params.id);
+        const { id } = req.params;
+        if (!id) {
+            return res.status(400).json({ error: 'ID da reserva não fornecido.' });
+        }
+        const reserva = await ReservaModel.getReservaById(id);
         if (!reserva) {
             return res.status(404).json({ error: 'Reserva não encontrada.' });
         }
-        res.json(reserva);
+        return res.status(200).json(reserva);
     } catch (error) {
+        console.error('Erro ao buscar reserva:', error);
         res.status(500).json({ error: 'Erro ao buscar reserva.' });
     }
 }
