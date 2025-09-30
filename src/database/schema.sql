@@ -1,6 +1,6 @@
-CREATE DATABASE projeto_back;
+CREATE DATABASE lendas_ufc_db;
 
-\c projeto_back;
+\c lendas_ufc_db;
 
 CREATE TABLE lutadores (
     id SERIAL PRIMARY KEY,
