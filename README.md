@@ -38,7 +38,7 @@ Esta API foi desenvolvida para centralizar informações sobre os lutadores bras
 1. Clone o repositório:
 ```bash
 git clone https://github.com/Bernardo1401/api-lendas-ufc.git
-cd proejto_back
+cd api-lendas-ufc
 ```
 
 2. Instale as dependências:
